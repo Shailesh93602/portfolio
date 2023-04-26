@@ -1,3 +1,5 @@
+import 'boxicons'
+
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
@@ -52,3 +54,7 @@ const typed = new Typed('.multiple-text', {
     backDelay: 1000,
     loop: true
 })
+
+function openCV() {
+    window.open('images/Shaileshbhai_cv.pdf', '_blank');
+}
