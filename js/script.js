@@ -56,3 +56,40 @@ const typed = new Typed('.multiple-text', {
 function openCV() {
     window.open('images/Shaileshbhai_cv.pdf', '_blank');
 }
+
+function toggleContent(id) {
+    const aboutSection = document.getElementById(id);
+    const shortContent = aboutSection.querySelector("#" + id + "Short");
+    const fullContent = aboutSection.querySelector("#" + id + "Full");
+
+    if (shortContent.style.display === "none") {
+      shortContent.style.display = "block";
+      fullContent.style.display = "none";
+    } else {
+      shortContent.style.display = "none";
+      fullContent.style.display = "block";
+    }
+  }
+
+
+  function submitForm(event) {
+    event.preventDefault(); 
+
+    // Get form values
+    var fullName = document.getElementById('fullName').value;
+    var email = document.getElementById('email').value;
+    var phoneNumber = document.getElementById('phoneNumber').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+
+    if (!fullName || !email || !subject || !message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    document.getElementById('contact-form').reset();
+
+    alert('Thank you for your message! We will get back to you soon.');
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', submitForm);
